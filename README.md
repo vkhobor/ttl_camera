@@ -17,12 +17,7 @@
   <a href="https://github.com/vkhobor/ttl_camera/releases">
       <img src="https://img.shields.io/github/v/release/vkhobor/ttl_camera?color=purple&include_prereleases&logo=github&style=for-the-badge" alt="Download from GitHub" />
   </a>
-  <a href="https://apt.izzysoft.de/fdroid/index/apk/org.breezyweather/">
-      <img src="https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/org.breezyweather?color=purple&include_prereleases&logo=FDROID&style=for-the-badge" alt="Download from IzzyOnDroid repo" />
-  </a>
-  <a href="https://f-droid.org/packages/org.breezyweather/">
-      <img src="https://img.shields.io/f-droid/v/org.breezyweather?color=purple&include_prereleases&logo=FDROID&style=for-the-badge" alt="Download from F-Droid default repo" />
-  </a>
+  
 </div>
 
 
