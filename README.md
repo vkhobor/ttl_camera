@@ -17,7 +17,7 @@
   <a href="https://github.com/vkhobor/ttl_camera/releases">
       <img src="https://img.shields.io/github/v/release/vkhobor/ttl_camera?color=purple&include_prereleases&logo=github&style=for-the-badge" alt="Download from GitHub" />
   </a>
-  
+
 </div>
 
 
@@ -40,20 +40,9 @@ alt="Get it on Obtainium" align="center" height="54" />
 <hr />
 
 <div align="center">
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01-main-header-1.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02-main-header-2.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/03-main-header-3.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/04-main-daily-hourly-1.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05-main-daily-hourly-2.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/06-main-daily-hourly-3.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/07-air-quality-pollen.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/08-ephemeris-details.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/09-alerts.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/10-widgets-1.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/11-widgets-2.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/12-sources.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/13-sources-combine.png" alt="" style="width: 300px" />
-    <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/14-settings.png" alt="" style="width: 300px" />
+    <img src="screenshots/camera.jpg" alt="" style="width: 300px" />
+    <img src="screenshots/modal.jpg" alt="" style="width: 300px" />
+    <img src="screenshots/settings.jpg" alt="" style="width: 300px" />
 </div>
 
 # Features
@@ -84,4 +73,3 @@ alt="Get it on Obtainium" align="center" height="54" />
 * This project is fully copyrighted by the author and is not open source.
 * No rights are granted to use, modify, or distribute the source code without explicit permission from the author.
 * Misrepresentation of the origin of the material is prohibited.
-
