@@ -31,8 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   camerawesome: ^2.0.0-dev.1
-  drift: ^2.23.1
-  drift_flutter: ^0.2.4
+  floor: ^1.4.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,12 +41,21 @@ dependencies:
   open_file: ^3.5.10
   flutter_launcher_icons: ^0.14.2
   signals: ^6.0.2
+  shared_preferences: ^2.3.5
+  workmanager: ^0.5.2
+  flutter_local_notifications: ^18.0.1
+  fluttertoast: ^8.2.10
+  android_intent_plus: ^5.2.2
+  media_store_plus: ^0.1.3
+  photo_manager: ^3.6.3
+  card_settings_ui: ^1.1.1
+  shadcn_ui: ^0.18.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  drift_dev: ^2.23.1
+  floor_generator: ^1.4.0
   build_runner: ^2.4.14
 
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ttl_camera/app.dart';
 
 class TimedWidget extends StatefulWidget {
   final Widget child;

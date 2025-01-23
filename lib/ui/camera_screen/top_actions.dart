@@ -1,7 +1,7 @@
 import 'package:camerawesome/camerawesome_plugin.dart';
 import 'package:flutter/material.dart';
-import 'package:ttl_camera/ttl_button.dart';
-import 'package:ttl_camera/app.dart';
+import 'package:ttl_camera/ui/camera_screen/settings_button.dart';
+import 'package:ttl_camera/ui/camera_screen/ttl_button.dart';
 
 class TopActions extends StatelessWidget {
   final CameraState state;
@@ -19,10 +19,8 @@ class TopActions extends StatelessWidget {
                 ? [const SizedBox.shrink()]
                 : [
                     AwesomeFlashButton(state: state),
-                    if (state is PhotoCameraState)
-                      AwesomeAspectRatioButton(state: state),
-                    if (state is PhotoCameraState)
-                      TtlButton(state: state, text: "ttl"),
+                    if (state is PhotoCameraState) TtlButton(state: state),
+                    if (state is PhotoCameraState) SettingsButton(),
                   ]);
 
   @override

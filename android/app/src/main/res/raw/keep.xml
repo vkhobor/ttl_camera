@@ -1,0 +1,2 @@
+<!-- res/raw/keep.xml -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@mipmap/ic_launcher" />
