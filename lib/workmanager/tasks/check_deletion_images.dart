@@ -1,4 +1,5 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:media_store_plus/media_store_plus.dart';
 import 'package:ttl_camera/persistence/sqlite/database.dart';
 import 'package:ttl_camera/services/image_deletion_service.dart';
 import 'package:ttl_camera/workmanager/entry.dart';
@@ -12,6 +13,8 @@ class CheckDeletionImages implements Task {
 
   @override
   Future<void> run() async {
+    await MediaStore.ensureInitialized();
+    MediaStore.appFolder = "TemporaryCamera";
     final database =
         await $FloorAppDatabase.databaseBuilder('app_database.db').build();
     final deletionService = ImageDeletionService(database);

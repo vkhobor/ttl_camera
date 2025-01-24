@@ -4,6 +4,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <application
         android:label="Temporary Camera"
+         android:requestLegacyExternalStorage="true"
         android:name="${applicationName}"
         >
         <activity

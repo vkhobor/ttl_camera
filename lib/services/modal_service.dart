@@ -68,8 +68,8 @@ class GlobalImageNotificatoinModalService {
       pageListBuilder: (bottomSheetContext) => [
         DeletionModalSheet(
           deletionItems: deletionItems,
-          onDelete: () {
-            _imageDeletionService.deleteAllDueImages();
+          onDelete: () async {
+            await _imageDeletionService.deleteAllDueImages();
             Navigator.of(bottomSheetContext).pop();
             _isDeletionDialogOpen = false;
             print('Bottom sheet closed.');

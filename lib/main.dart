@@ -49,11 +49,9 @@ class _AppScaffoldState extends State<AppScaffold> {
       theme: ShadThemeData(
           colorScheme: ShadBlueColorScheme.dark(), brightness: Brightness.dark),
       materialThemeBuilder: (ctx, theme) => theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          surface: NewSurfaceTheme.getSurfaceColor(
-              SurfaceColorEnum.surfaceContainerLowest, theme.colorScheme),
-          onSurfaceVariant: Colors.black,
-        ),
+        scaffoldBackgroundColor: Colors.black,
+        colorScheme: theme.colorScheme
+            .copyWith(surface: Colors.black, surfaceContainer: Colors.black),
       ),
       themeMode: ThemeMode.dark,
       initialRoute: '/',

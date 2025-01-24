@@ -125,11 +125,13 @@ class _CameraScreenState extends State<CameraScreen> {
                 dirType: DirType.photo,
               );
               lastContentUri = fileinfo!.uri.toString();
+              final kkk = await mediaStorePlugin.getFilePathFromUri(
+                  uriString: lastContentUri);
               print("handled file path uri: ${fileinfo!.uri.toString()}");
               var time =
                   DateTime.now().toUtc().add(GlobalState().ttl.ttlSignal.value);
               await widget.database.personDao
-                  .insertTemporaryImage(TemporaryImage(path, time));
+                  .insertTemporaryImage(TemporaryImage(kkk!, time));
             }
           case MultipleCaptureRequest _:
             break;
