@@ -59,6 +59,7 @@ jobs:
       - name: Create Draft Release
         uses: ncipollo/release-action@v1
         with:
+          artifacts: "build/app/outputs/flutter-apk/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: "${{ steps.extract_version.outputs.tag }}"
           prerelease: "${{ steps.extract_version.outputs.beta }}"
