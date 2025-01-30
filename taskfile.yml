@@ -1,0 +1,115 @@
+version: "3"
+
+env:
+  FLUTTER: flutter
+
+vars:
+  DEFAULT_PLATFORM: android
+  APK_OUTPUT_DIR: ./build/app/outputs/flutter-apk
+
+tasks:
+  version:
+    desc: Get version from pubspec.yaml
+    aliases: [v]
+    cmds:
+      - cmd: |
+          grep -oP "^version: [^\+]+" pubspec.yaml | tail -c +10
+
+  ci:release-build:
+    desc: Build all APK variants for CI
+    aliases: [crb]
+    cmds:
+      - $FLUTTER build apk
+      - $FLUTTER build apk --split-per-abi
+      - task: ci:list-artifacts
+
+  ci:list-artifacts:
+    desc: List all CI artifacts
+    aliases: [cla]
+    env:
+      pattern: "{{.APK_OUTPUT_DIR}}/*"
+    cmds:
+      - ls $pattern
+
+  clean:
+    desc: Clean the project
+    aliases: [c]
+    cmds:
+      - $FLUTTER clean
+      - $FLUTTER pub get
+
+  get:
+    desc: Get dependencies
+    aliases: [g]
+    cmds:
+      - $FLUTTER pub get
+
+  analyze:
+    desc: Analyze the code
+    aliases: [a]
+    cmds:
+      - $FLUTTER analyze
+
+  format:
+    desc: Format the code
+    aliases: [f]
+    cmds:
+      - $FLUTTER format .
+
+  test:
+    desc: Run tests
+    aliases: [t]
+    cmds:
+      - $FLUTTER test
+
+  build:android:
+    desc: Build Android APK
+    aliases: [ba]
+    cmds:
+      - $FLUTTER build apk --release
+
+  build:ios:
+    desc: Build iOS
+    aliases: [bi]
+    cmds:
+      - $FLUTTER build ios --release
+
+  run:
+    interactive: true
+    desc: Run app for development
+    aliases: [r]
+    cmds:
+      - $FLUTTER run
+
+  generate:
+    desc: Run code generation
+    aliases: [gen]
+    cmds:
+      - $FLUTTER pub run build_runner build --delete-conflicting-outputs
+
+  watch:
+    desc: Watch and run code generation
+    aliases: [w]
+    cmds:
+      - $FLUTTER pub run build_runner watch --delete-conflicting-outputs
+
+  lint:
+    desc: Run all static analysis
+    aliases: [l]
+    deps: [format, analyze]
+
+  ci:
+    desc: Run all CI tasks
+    deps: [get, lint, test]
+
+  upgrade:
+    desc: Upgrade dependencies
+    aliases: [u]
+    cmds:
+      - $FLUTTER pub upgrade
+
+  doctor:
+    desc: Run Flutter doctor
+    aliases: [d]
+    cmds:
+      - $FLUTTER doctor
