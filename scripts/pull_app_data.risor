@@ -1,0 +1,27 @@
+package_name := getenv("PACKAGE_NAME")
+local_dir := getenv("LOCAL_DIR")
+
+timestamp := time.now().format("2006-01-02_15-04-05")
+temp_dir := filepath.join("/sdcard/Download", sprintf("temp_app_data_%s_%s", package_name, timestamp))
+
+print("Creating temporary directory on device:", temp_dir)
+result := exec(["adb","shell","mkdir", "-p",temp_dir])
+
+print("Copying app data to temporary directory...")
+result = exec(["adb","shell", "run-as", package_name ,"sh","-c", "'cp -r * "+temp_dir+"'"])
+
+print("Copying data from device to local directory:", local_dir)
+try(
+  func() {
+    os.stat(local_dir)
+  },
+  func(err) {
+    os.mkdir(local_dir)
+  }
+)
+result = exec(["adb", "pull", temp_dir, local_dir])
+
+print("Cleaning up temporary directory on device...")
+result = exec(["adb", "shell", sprintf("rm -rf %s", temp_dir)])
+
+print("Data backup completed successfully. Files are located in", local_dir)

@@ -4,17 +4,21 @@ env:
   FLUTTER: flutter
 
 vars:
-  DEFAULT_PLATFORM: android
   APK_OUTPUT_DIR: ./build/app/outputs/flutter-apk
+  PACKAGE_NAME: "com.example.ttl_camera"
 
 tasks:
   pull-app-data:
     desc: Pull app data from device using package name and local directory
     aliases: [pad]
-    requires:
-      vars: ["OUT", "NAME"]
+    vars:
+      RISOR_EXEC:
+        sh: task which-risor
+    env:
+      PACKAGE_NAME: "{{.PACKAGE_NAME}}"
+      LOCAL_DIR: "./.temp"
     cmds:
-      - ./scripts/pull_app_data.sh {{.NAME}} {{.OUT}}
+      - "{{.RISOR_EXEC}} ./scripts/pull_app_data.risor"
 
   version:
     desc: Get version from pubspec.yaml
@@ -45,6 +49,7 @@ tasks:
     cmds:
       - $FLUTTER clean
       - $FLUTTER pub get
+      - rm -r ./.temp
 
   get:
     desc: Get dependencies
@@ -122,13 +127,12 @@ tasks:
     cmds:
       - $FLUTTER doctor
 
-  risor:
+  which-risor:
     desc: Risor executable
-    aliases: [ri]
     cmds:
-      - cmd: ./scripts/runner/risor.exe
+      - cmd: echo ./scripts/runner/risor.exe
         platforms: [windows]
-      - cmd: ./scripts/runner/risor
+      - cmd: echo ./scripts/runner/risor_linux
         platforms: [linux]
-      - cmd: ./scripts/runner/risor_apple
+      - cmd: echo ./scripts/runner/risor_apple
         platforms: [darwin]
