@@ -24,8 +24,8 @@ jobs:
           distribution: "temurin"
           java-version: "17"
 
-      - name: Setup Task
-        uses: illbjorn/setup-taskfile@main
+      - name: Install Task
+        uses: arduino/setup-task@v2
 
       - name: Flutter Doctor
         id: flutter_doctor
