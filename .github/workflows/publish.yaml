@@ -44,7 +44,7 @@ jobs:
         run: |
           task ci:release-build
           ARTIFACTS=$(task ci:list-artifacts)
-          echo "artifacts=$ARTIFACTS" >> $GITHUB_OUTPUT
+          echo "artifacts=\"$ARTIFACTS\"" >> $GITHUB_OUTPUT
 
       - name: Save Unsigned APKs as Action Artifacts
         uses: actions/upload-artifact@v4

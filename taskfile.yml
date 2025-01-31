@@ -8,6 +8,14 @@ vars:
   APK_OUTPUT_DIR: ./build/app/outputs/flutter-apk
 
 tasks:
+  pull-app-data:
+    desc: Pull app data from device using package name and local directory
+    aliases: [pad]
+    requires:
+      vars: ["OUT", "NAME"]
+    cmds:
+      - ./scripts/pull_app_data.sh {{.NAME}} {{.OUT}}
+
   version:
     desc: Get version from pubspec.yaml
     aliases: [v]
@@ -113,3 +121,14 @@ tasks:
     aliases: [d]
     cmds:
       - $FLUTTER doctor
+
+  risor:
+    desc: Risor executable
+    aliases: [ri]
+    cmds:
+      - cmd: ./scripts/runner/risor.exe
+        platforms: [windows]
+      - cmd: ./scripts/runner/risor
+        platforms: [linux]
+      - cmd: ./scripts/runner/risor_apple
+        platforms: [darwin]
